@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+            box-sizing: border-box;
+        }
+        .container{
+            display: flex;
+            flex-direction: row;
+            background-color: bisque;
+            border-color: black ;
+            align-items: center;
+            width: 50%;
+        }
+        .reg-from{
+            width:40%;
+            padding: 20px 15px;
+            min-height: 100vh;
+            border:8px;
+            border-color: gold;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="reg-form">
+            <h2>Student registration form</h2>
+            <form name="register" id="register" method="post" action="#" onsubmit="validate();">
+                <lable for="name">Name:</lable><br>
+                <input type="text" name="sname" id="sname" placeholder="enter student name" onsubmit="validate();"><br>
+                <lable for="name"> Father's Name:</lable><br>
+                <input type="text" name="fname" id="fname" placeholder="enter father name"><br>
+                <lable for="name"> Mother's Name:</lable><br>
+                <input type="text" name="mname" id="mname" placeholder="enter mother name"><br>
+                <lable for="name"> Mobile no.:</lable><br>
+                <input type="number" name="mobile" id="moblie" placeholder="enter mobile name"><br>
+                <lable for="name" >Gender:</lable><br>
+                <input type="radio" name="gender" value="Male" checked/>Male 
+                <input type="radio" name="gender" value="Female" checked/>Female<br>
+                <lable for="dob">date of birth:</lable><br>
+                <input type="email" name="email" id="email">email<br>
+                <select name="branch">
+                    <option value="it">it</option>
+                    <option value="cse">cse</option>
+                    <option value="ece">ece</option>
+                    <option value="ds">ds</option>
+                </select> 
+                <select name="section">
+                    <option value="a">A</option>
+                    <option value="b">B</option>
+                    <option value="c">C</option>
+                </select>
+            </form>
+        </div>
+    </div>
+    <script>
+        function validate(){
+            console.log("validation call");
+            
+        }
+        function validate(){
+            const mono=document.getElementById("moblie");
+            if(isNaN(mono.value)|| mono.value.length!=10){
+                alert("mobile no. is invalid");
+                return false;
+            }
+            return true;
+        }
+
+    </script>
+</body>
+</html>
